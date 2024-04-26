@@ -70,7 +70,7 @@ def get_llm_response(chat_context, user_examples, user_query):
 
 
 # Streamlit App
-st.title("Request Synthetic Data")
+st.title("Request Synthetic Data (A)")
 
 col1, col2, col3 = st.columns([6, 1, 2])
 
@@ -90,7 +90,7 @@ with col1:
     submit_button = st.button("Submit", on_click=lambda: setattr(st.session_state, 'submit_flag', True))
 
 with col3:
-    st.write("Provide up to 3 examples:")
+    st.write("You can provide up to 3 examples:")
     for i in range(3):
         st.session_state.user_examples[i] = st.text_input(f"Example {i+1}:", key=f"example_{i}", value=st.session_state.user_examples[i])
 
